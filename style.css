@@ -1,0 +1,81 @@
+.bottom, .rh-line, .ibm-line {
+  fill: none;
+}
+
+.bottom {
+  stroke-width: inherit;
+  stroke: #567;
+  stroke-opacity: 0.3;
+}
+
+.rh-line, .ibm-line {
+  stroke: #e00;
+  animation: loop 3s linear infinite;
+  stroke-dasharray: 0 28;
+  stroke-linecap: round;
+}
+
+.finny {
+  width: 100%;
+  stroke-width: 1.43;
+  animation: rot 36s linear infinite;
+  max-height: 50vh;
+  margin-top: 25vh;
+}
+
+.ibm-line {
+  stroke: #1F70C1;
+  animation-delay: -1.5s;
+}
+
+.rh-line, .ibm-line {
+  mix-blend-mode: screen;
+}
+
+body {
+  perspective: 400px;
+}
+
+@keyframes rot {
+  49% {
+    transform: rotate(179deg) rotatey(70deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loop {
+  0% {
+    stroke-dashoffset: 0.5;
+    stroke-dasharray: 1 26.5;
+    stroke-width: 1.5;
+  }
+  20% {
+    stroke-width: 0.35;
+  }
+  50% {
+    stroke-dasharray: 7 20.5;
+  }
+  90% {
+    stroke-width: 0.35;
+  }
+  100% {
+    stroke-width: 1.5;
+    stroke-dasharray: 1 26.5;
+    stroke-dashoffset: 28;
+  }
+}
+.clip-shadow {
+  stroke-linecap: butt;
+  fill: none;
+  opacity: 0.9;
+  stroke-width: inherit;
+  stroke: url(#sgrad);
+}
+
+body {
+  background-color: #020710;
+  background-image: radial-gradient(#000, #020710);
+  background-size: 100vw 100vw;
+  background-position: 50% 50%;
+}
